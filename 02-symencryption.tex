@@ -368,7 +368,7 @@ kennt, sinnvolle von sinnfreien Nachrichten unterscheiden kann.
 
 Neben dem Vorteil perfekter Geheimhaltung hat das One-Time-Pad auch
 einige schwerwiegende Nachteile. Ein elementarer Nachteil besteht darin,
-dass die Schlüssellänge der Länge des Klartexts entsprechen muss und so
+dass die Schlüssellänge der Länge des Klartextes entsprechen muss und so
 die zu übermittelnde Datenmenge verdoppelt wird. Dementsprechend schwer
 gestaltet sich die Übertragung des Schlüsselmaterials, die, um die
 Eigenschaft perfekter Geheimhaltung nicht zu verletzen, physisch
@@ -398,7 +398,7 @@ Geheimtexte den Klartext $M_{2}$.
 Ebenso nachteilig ist, dass das One-Time-Pad bei korrekter Verwendung
 zwar gegen Angreifer, die die Nachricht lesen möchten, schützt, jedoch
 nicht gegen Angreifer, die die Nachricht durch Kippen von Bits des
-Geheimtexts verändern. So könnte ein Angreifer gemäß
+Geheimtextes verändern. So könnte ein Angreifer gemäß
 Beispiel~\ref{ssec:otp:ex:prob} unerkannt zwei Bits des Chiffrats
 kippen, so dass Bob beim Entschlüsseln auf einen falschen Klartext
 stößt, nämlich MIT. Gezielte sinnhafte Änderungen des zugrundeliegenden
@@ -1247,7 +1247,7 @@ wohingegen die Schlüssellänge aus 128 Bit, 192 Bit und 256 Bit gewählt
 werden kann. Dementsprechend bezeichnet AES-256 genau die Variante mit
 der größten Schlüssellänge. Der 128-Bit große Datenblock wird zu Beginn
 sequenziell in eine zweidimensionale $4 \times 4$-Tabelle, den
-sogenannten \emph{state}, geschrieben. Jede Zelle des states
+sogenannten \emph{State}, geschrieben. Jede Zelle des States
 repräsentiert dabei genau ein Byte des Klartextblocks. Ähnlich zu DES
 läuft die Verschlüsselung bei AES rundenbasiert ab, wobei eine Runde
 jeweils aus den vier folgenden Schritten besteht:
@@ -1255,7 +1255,7 @@ jeweils aus den vier folgenden Schritten besteht:
 \begin{enumerate}
   \small
 \item \textbf{AddRoundKey} Der aus dem Hauptschlüssel abgeleitete,
-  ebenfalls 128-Bit lange Rundenschlüssel wird byteweise mit dem state
+  ebenfalls 128-Bit lange Rundenschlüssel wird byteweise mit dem State
   XOR-verknüpft. 
 \item \textbf{SubBytes} Benutze die S-Box, um jedes Byte der
   zweidimensionalen Tabelle durch ein anderes Byte zu ersetzen. 
