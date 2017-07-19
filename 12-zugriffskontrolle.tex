@@ -17,8 +17,8 @@ benötigen wir:
 
 \begin{itemize}
 \item eine Menge $\calS$ von Subjekten, die Mitarbeiter
-\item eine Menge $\calO$ von Objekten aller Informationen (Gehälter, Produktskizzen,...)
-\item eine Menge $\calR$  von Zugriffsrechten (Leserecht, Schreibrecht,...)
+\item eine Menge $\calO$ von Objekten aller Informationen (Gehälter, Produktskizzen, ...)
+\item eine Menge $\calR$  von Zugriffsrechten (Leserecht, Schreibrecht, ...)
 \item eine Funktion $f\colon \calS \times \calO \rArrow \calR$, die das Zugriffsrecht eines Subjektes auf ein Objekt angibt
 \end{itemize}
 
@@ -184,10 +184,10 @@ können, gelesene Informationen zu vergessen.
 
 Ein anderer Lösungsansatz für dieses Problem stellt die Einteilung der
 Subjekte in vertrauenswürdige und nicht vertrauenswürdige Subjekte
-dar. Für Erstere wird, ausgehend davon, dass keine Weitergabe von
-Informationen an nicht berechtigte Subjekte erfolgt, die
+dar. Für erstere wird (unter den Annahme, dass keine Weitergabe von
+Informationen an nicht berechtigte Subjekte erfolgt) die
 \(\star\)-Eigenschaft ausgesetzt. Hier ist die Qualität der Prüfung, ob
-ein Subjekt vertrauenswürdig ist oder nicht, entscheidend für die
+ein Subjekt vertrauenswürdig ist, entscheidend für die
 Sicherheit des Modells.
 
 Ein zweiter gravierender Nachteil ergibt sich daraus, dass Subjekte auf
@@ -195,7 +195,7 @@ Objekte höheren Sicherheitslevels schreibend zugreifen dürfen. Somit
 können gezielt sensitive Objekte von nicht autorisierten Subjekten
 geändert werden, was zu hohen Schäden führen kann.  Ein subtilerer
 Nachteil ergibt sich aus der Tatsache, dass Subjekte beispielsweise die
-Existenz von sensitiven Objekten erfahren können. % Umschreiben % Zwar
+Existenz von sensitiven Objekten erfahren können. Zwar % Umschreiben
 ist Bell-LaPadula dynamischer als das in der Einleitung vorgestellte
 Modell, doch sind die Zugriffskontrollmatrix \(M\) und die Funktionen
 \(f_s, f_o\) unveränderlich.
@@ -276,7 +276,7 @@ ermöglichen kann.
 Um indirekten Informationsfluss zu verhindern, brauchen wir neben der
 ss-Eigenschaft eine zusätzliche Forderung. Eine Schreibanfrage eines
 Beraters soll nur dann erlaubt werden, falls alle von ihm zuvor gelesen
-Objekte entweder aus der gleichen Firma stammen oder mit keiner Firma in
+Objekte entweder aus der selben Firma stammen, oder mit keiner Firma in
 Konflikt stehen. Formalisieren wir unsere Forderung als Eigenschaft,
 ergibt sich:
 
@@ -291,7 +291,7 @@ ergibt sich:
 
 Erlauben wir ausschließlich Anfragen, die beide Eigenschaften erfüllen,
 können wir eine konfliktfreie Zuordnung garantieren. Ungewollter
-Informationsfluss - direkter, sowie indirekter - kann ausgeschlossen
+Informationsfluss -- direkter, sowie indirekter -- kann ausgeschlossen
 werden. Auffällig ist jedoch die Striktheit der \(\star\)-Eigenschaft,
 die gerade mit zunehmender Dauer den Beratern enge Grenzen steckt. Eine
 Möglichkeit, die gelesenen Objekte eines Beraters (nach einer gewissen
