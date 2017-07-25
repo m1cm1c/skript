@@ -471,7 +471,7 @@ dass $\mathbbm{G} = \langle g \rangle \coloneqq \{g^k \mid k \in
 
 \subsection{Vorgehen} Für die Schlüsselerzeugung wird eine ausreichend
 große Gruppe $\mathbbm{G}$ mit Primordnung $p$ mit dem Erzeuger $g$
-verwendet.
+verwendet. Dabei ist zu beachten, dass nicht jede solche Gruppe sicher ist. Siehe \ref{ElGamal sichere Gruppen}.
 \subsubsection{Schlüsselerzeugung} Zur Schlüsselerzeugung wird ein $x
 \in {2,\dots, p-1}$ zufällig gewählt und $h \coloneqq g^x$ berechnet. Dann
 sind:
@@ -486,7 +486,7 @@ definiert durch
 &\dec(sk, (g^y, C)) \coloneqq \frac{C}{(g^y)^x},
 \end{align*} 
 wobei $y$ bei jeder Verschlüsselung neu zufällig aus $\{2, \dots, p-1\}$
-gewählt wird. Es gilt also 
+gewählt wird. Es gilt also:
 \begin{align*} 
 C &\coloneqq h^y M \\ 
 \Leftrightarrow \quad M& = \frac{C}{h^y} = \frac{C}{g^{xy}}
@@ -502,7 +502,7 @@ ElGamal homomorph:
                                  &= \enc({pk, M \cdot M'})
 \end{align*}
 
-\subsubsection{Sicherheit des Verfahrens und Wahl geeigneter Gruppen}
+\subsubsection{Sicherheit des Verfahrens und Wahl geeigneter Gruppen}\label{ElGamal sichere Gruppen}
 Für die Sicherheit des ElGamal-Verfahrens ist die Wahl eine geeigneten
 Gruppe $\mathbb{G}$ von entscheidender Bedeutung. ElGamal ist genau dann
 IND-CPA-sicher, wenn in $\mathbb{G}$ die \emph{decisional
