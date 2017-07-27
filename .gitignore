@@ -90,4 +90,6 @@ sympy-plots-for-*.tex/
 
 *.synctex
 
+# Emacs
 auto
+.#*
