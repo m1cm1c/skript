@@ -2088,7 +2088,7 @@ einer Verknüpfung der einzelnen Chiffratblöcke. Vereinfacht dargestellt
 erhalten wir folgende Operationen, wobei $\ciphert \coloneqq \enc(\key,
 \plaint)$:
 \begin{align*}
-  EncryptAndAuthenticate(\key, \plaint) &\coloneqq (\ciphert, \sig(\key, \ciphert)) = (\ciphert, \sigma)\\
+  EncryptAndAuthenticate(\key, \plaint) &\coloneqq (\ciphert, \sig(\key, \plaint)) = (\ciphert, \sigma)\\
   DecryptAndAuthenticate(\key, \ciphert, \sigma) &\coloneqq \begin{cases}
     \dec(\key, \ciphert) & \ver(\key, \dec(\key, \ciphert), \sigma) = 1 \\
     \bot & \textnormal{sonst}
