@@ -24,7 +24,7 @@ V während der Kommunikation mit P nichts über $\skey_P$ lernt, was er
 nicht schon aus $\pkey_P$ berechnen kann.
 
 Wir modellieren dafür zu dem Verifier V einen Simulator $\mathcal{S}$,
-der dieselbe Ausgabe erzeugt wie P, jedoch ohne mit P kommuniziert zu
+der die gleiche Ausgabe erzeugt wie P, jedoch ohne mit P kommuniziert zu
 haben. Dazu benötigen wir die folgende Definition:
 \begin{definition}[Ununterscheidbarkeit\index{Ununterscherscheidbarkeit}]\label{def:zk:ununterscheidbarkeit}
   Zwei (möglicherweise vom Sicherheitsparameter $k \in \mathbbm{N}$ abhängige) Verteilungen $X$, $Y$ sind ununterscheidbar (geschrieben $X
@@ -52,7 +52,7 @@ $\mathcal{S}$ simuliert also die Interaktion zwischen P und \A. Da
 $\Sim$ ein PPT-Algorithmus ist, dessen einzige Informationsquelle über
 $\skey$ der gegebene Public Key $\pkey$ ist, kann die Ausgabe von $\Sim$
 nur Informationen enthalten, die bereits mit geringem Aufwand aus
-$\pkey$ berechnet werden können. Ist die Zero-Knowledge Eigenschaft
+$\pkey$ berechnet werden können. Ist die Zero Knowledge-Eigenschaft
 erfüllt, dann ist ein solches simuliertes Transkript von einem echten
 Transkript $\langle \mathrm{P}(\skey), \A(1^k, \pkey) \rangle$ nicht
 unterscheidbar, also kann auch das echte Transkript nicht mehr
@@ -65,7 +65,7 @@ Zero-Knowledge-Protokoll ist. Im ersten Schritt des Protokolls sendet
 der Verifier V einen Zufallsstring R an den Prover P. Im zweiten Schritt
 sendet P eine Signatur der Nachricht R an V zurück.
 
-Um ein glaubwürdiges simuliertes Transkript zu erstellen müsste der
+Um ein glaubwürdiges simuliertes Transkript zu erstellen, müsste der
 Simulator also einen Zufallsstring R und eine gültige Signatur $\sigma
 \coloneqq \sig(\skey, R)$ erzeugen, um diese in das simulierte Transkript
 einzubetten. Das würde aber einen Bruch des Signaturverfahrens
@@ -323,7 +323,7 @@ Ausgabe ununterscheidbar von echten Transskripten $\langle
 schwierig ist, ZK-Protokolle zu konstruieren, deren
 Sicherheitseigenschaft durch einen garantiert
 poly\-nomialzeit-be\-schränk\-ten Simulator gezeigt werden kann, fordern
-wir im Folgenden lediglich, dass $\Sim$ erwartet in Polynomialzeit
+wir im Folgenden lediglich, dass $\Sim$ \textit{erwartet} in Polynomialzeit
 terminiert.
 
 Um Ununterscheidbarkeit zu erreichen, simuliert $\Sim$ intern eine
@@ -366,11 +366,11 @@ Transkripten $\langle \mathrm{P}(\skey), \A(1^k, \pkey) \rangle$.
 
 Ein echtes Transkript besteht aus allen Commitments $com_i$, die eine
 gültige Dreifärbung des Graphen enthalten, der Wahl $(i,j)$ des
-Angreifers $\A$, sowie der Information zur Öffnung der Commitments
+Angreifers $\A$, sowie den Information zur Öffnung der Commitments
 $com_i$ und $com_j$.
 
 Das vom Simulator $\Sim$ ausgegebene Transkript enthält ebenfalls alle
-Commitments $com_i$, die Wahl des Angreifers $(i,j)$ sowie der
+Commitments $com_i$, die Wahl des Angreifers $(i,j)$, sowie die
 Information zur Öffnung der Commitments $com_i$ und $com_j$. Durch die
 Konstruktion des Simulators werden dabei immer verschiedene Farben
 aufgedeckt, d.h. in diesem Schritt ist keine Unterscheidung möglich.
@@ -421,7 +421,7 @@ Wir definieren dazu die Proof-of-Knowledge-Eigenschaft:
   Ein Identifikationsprotokoll $(\gen, P, V)$ ist ein Proof of
   Knowledge, wenn ein PPT-Algorithmus $\ext$ (der "`Extraktor"')
   existiert, der bei Zugriff auf einen beliebigen erfolgreichen Prover P
-  einen \footnote{Im Allgemeinen kann es mehrere gültige geheime Schlüssel
+  einen\footnote{Im Allgemeinen kann es mehrere gültige geheime Schlüssel
     zu einem Public-Key geben. In unserem Beispielprotokoll auf Basis der
     Graphdreifärbbarkeit ist z.B. jede Permutation einer gültigen
     Dreifärbung selbst eine gültige Dreifärbung. Es kann darüber hinaus aber
@@ -439,7 +439,7 @@ Tatsächlich sind diese Eigenschaften jedoch nicht widersprüchlich, da
 wir dem Extraktor $\ext$ weitergehende Zugriffsmöglichkeiten auf P
 zugestehen als einem Verifier: Ein Verifier ist nämlich auf die
 Interaktion mit P beschränkt, während wir dem Extraktor $\ext$ auch
-gestatten P zurückzuspulen.
+gestatten, P zurückzuspulen.
 
 Für unser Graphdreifärbbarkeits-Identifikationsprotokoll können wir
 diese Eigenschaft auch tatsächlich nachweisen.
@@ -478,7 +478,7 @@ diese Eigenschaft auch tatsächlich nachweisen.
     \footnote{Streng genommen kann der Extraktor hiermit nur die Farben
       von Knoten in Erfahrung bringen, die mindestens eine Kante
       haben. Knoten ohne Kanten können jedoch beliebig gefärbt werden,
-      ohne das eine Dreifärbung ihre Gültigkeit verliert.} 
+      ohne dass eine Dreifärbung ihre Gültigkeit verliert.} 
   \item Schließlich gibt $\ext$ die Farben $\pi(\phi(i))$ aller Knoten
     $i$ aus. Da P ein erfolgreicher Prover ist, muss P auch tatsächlich
     eine gültige Dreifärbung $\phi$ von $G$ besitzen. Dann ist aber auch
@@ -491,7 +491,7 @@ Der wesentliche Unterschied, warum ein Verifier keinerlei Informationen
 aus den aufgedeckten Kanten über $\phi$ lernt, ein Extraktor aber schon,
 ist, dass die dem Verifier aufgedeckten Farben stets einer anderen
 Permutation unterzogen werden (vgl. Beispiel \ref{ex:zk:zkexample}),
-während die Kanten, die der Extraktor in Erfahrung bringt immer der
+während die Kanten, die der Extraktor in Erfahrung bringt, immer der
 selben Permutation unterliegen. 
 
 %%% Local Variables:
